@@ -24,7 +24,7 @@
 countdown() ->
     UTCNow = calendar:universal_time(),
     Jouvert = jouvert_after(UTCNow),
-	daystime_diff(Jouvert, UTCNow).
+    daystime_diff(Jouvert, UTCNow).
 
 %% @doc Calculate difference between two dates
 -spec daystime_diff(calendar:datetime(), calendar:datetime()) ->
@@ -38,16 +38,16 @@ daystime_diff(Later, Earlier) ->
 -spec jouvert() -> calendar:datetime().
 jouvert() ->
     UTCNow = calendar:universal_time(),
-	jouvert_after(UTCNow).
+    jouvert_after(UTCNow).
 
 %% @doc Date of the coming J'ouvert after a given date
 -spec jouvert_after(calendar:datetime()) -> calendar:datetime().
 jouvert_after({{Year, _M, _D}, _Time} = DateTime) ->
     case jouvert(Year) of
-		Jouvert when DateTime < Jouvert ->
+        Jouvert when DateTime < Jouvert ->
             Jouvert;
-		_Passed ->
-			jouvert(Year + 1)
+        _Passed ->
+            jouvert(Year + 1)
     end.
 
 %% @doc Calculate the start of J'overt in the given year
@@ -76,8 +76,9 @@ days_before(Date, Days) ->
 
 %% @doc Easter date calculation
 %%
-%% @see http://en.wikipedia.org/wiki/Computus
-%% @see https://www.drupal.org/node/1180480
+%% See http://en.wikipedia.org/wiki/Computus
+%%
+%% See https://www.drupal.org/node/1180480
 -spec easter(year()) -> calendar:date().
 easter(Year) ->
     A = Year rem 19,
