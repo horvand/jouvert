@@ -1,0 +1,14 @@
+{application, jouvert,
+ [
+  {description, "Library to Calculate the date of the Trinidad Carnival"},
+  {vsn, "1.0.0"},
+  {modules, [
+             jouvert
+            ]},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {env, []}
+ ]}.
